@@ -1,9 +1,9 @@
 /* @flow */
 
 import MarkdownParser from './MarkdownParser';
-import {stateFromElement} from 'draft-js-import-element';
+const {stateFromElement} = require('../../draft-js-import-element/lib/main')
 
-import type {ContentState} from 'draft-js';
+const {ContentState} = global.Draft
 
 export default function stateFromMarkdown(markdown: string): ContentState {
   let element = MarkdownParser.parse(markdown, {getAST: true});
